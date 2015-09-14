@@ -1,14 +1,14 @@
-var playerNums = [1,2,3,4,5,6,7,8,9,10];
-var computerNums = [1,2,3,4,5,6,7,8,9,10];
+// var playerNums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+var computerNums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
-var playerMoves = [];
+// var playerMoves = [];
 var computerMoves = [];
 
-var playerPoints = 0;
-var computerPoints = 0;
+// var playerPoints = 0;
+// var computerPoints = 0;
 
 var computerArrayTotal = null;
-var playerArrayTotal = null;
+// var playerArrayTotal = null;
 
 var win = false;
 
@@ -28,36 +28,36 @@ function arrayTotal(array){
 }
 
 function removeNums(playerNum, computerNum){
-  var playerIndex = playerNums.indexOf(playerNum);
-  playerMoves.push(playerNums[playerIndex]);
-  playerNums.splice(playerIndex, 1, 'removed');
-  console.log('player numbers :' + playerNums);
+  // var playerIndex = playerNums.indexOf(playerNum);
+  // playerMoves.push(playerNums[playerIndex]);
+  // playerNums.splice(playerIndex, 1, 'removed');
+  // console.log('player numbers :' + playerNums);
   var computerIndex = computerNums.indexOf(computerNum);
   computerNums.splice(computerIndex, 1, 'removed');
-  console.log('computer numbers : ' +computerNums);
+  // console.log('computer numbers : ' +computerNums);
 }
 
-function score(playerNum, computerNum){
-  if(playerNum < computerNum-1){
-    playerPoints += 1;
-  } else if (computerNum < playerNum-1){
-    computerPoints += 1;
-  } else if (playerNum === computerNum-1){
-    computerPoints +=2;
-  } else if (computerNum === playerNum-1){
-    playerPoints +=2;
-  }
-  console.log('Player Points : ' +playerPoints);
-  console.log('Computer Points : ' + computerPoints);
-  turnCounter += 1;
-  playerNum = null;
-  if(playerPoints >= 5 || computerPoints >= 5){
-    win = true;
-    var playerMoves = [];
-    var computerMoves = [];
-    return 'Game Over';
-  }
-}
+// function score(playerNum, computerNum){
+//   if(playerNum < computerNum-1){
+//     playerPoints += 1;
+//   } else if (computerNum < playerNum-1){
+//     computerPoints += 1;
+//   } else if (playerNum === computerNum-1){
+//     computerPoints +=2;
+//   } else if (computerNum === playerNum-1){
+//     playerPoints +=2;
+//   }
+//   console.log('Player Points : ' +playerPoints);
+//   console.log('Computer Points : ' + computerPoints);
+//   turnCounter += 1;
+//   playerNum = null;
+//   if(playerPoints >= 5 || computerPoints >= 5){
+//     win = true;
+//     var playerMoves = [];
+//     var computerMoves = [];
+//     return 'Game Over';
+//   }
+// }
 
 function nextMove(){
   playerNum = parseInt(prompt('Your Number?'));
@@ -75,14 +75,11 @@ function nextMove(){
 
 function playGame(){
   nextMove();
-  console.log('playerArrayTotal : ' + playerArrayTotal);
-  console.log('computerArraytotal : ' + computerArrayTotal);
-  console.log('computer number : '  + computerNum);
-  console.log('playerNum : '  + playerNum);
   removeNums(playerNum, computerNum);
   playerArrayTotal = arrayTotal(playerNums);
   computerArrayTotal = arrayTotal(computerNums);
-  score(playerNum, computerNum);
+  return computerNum;
+  // score(playerNum, computerNum);
 }
 
 function findBestLowNum(computerArray, playerArray){
@@ -118,9 +115,8 @@ function findBestHighNum(computerArray, playerArray){
 }
 
 
-while(win === false){
-  playGame();
-}
+var number = playGame();
+
 
 
 
