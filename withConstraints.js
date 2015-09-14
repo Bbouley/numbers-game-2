@@ -60,10 +60,10 @@ function removeNums(playerNum, computerNum){
 // }
 
 function nextMove(){
-  playerNum = parseInt(prompt('Your Number?'));
-  while (playerMoves.indexOf(playerNum) >= 0){
-    playerNum = parseInt(prompt('already picked, try again'));
-  }
+  // playerNum = parseInt(prompt('Your Number?'));
+  // while (playerMoves.indexOf(playerNum) >= 0){
+  //   playerNum = parseInt(prompt('already picked, try again'));
+  // }
   if(turnCounter === 0){
     computerNum = Math.floor((Math.random()*4)+3);
   } else if (computerArrayTotal <= playerArrayTotal){
@@ -115,7 +115,7 @@ function findBestHighNum(computerArray, playerArray){
 }
 
 
-var number = playGame();
+var number = gplayGame();
 
 
 
