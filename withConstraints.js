@@ -1,7 +1,7 @@
-// var playerNums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+var playerNums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 var computerNums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
-// var playerMoves = [];
+var playerMoves = [];
 var computerMoves = [];
 
 // var playerPoints = 0;
@@ -61,9 +61,6 @@ function removeNums(playerNum, computerNum){
 
 function nextMove(){
   // playerNum = parseInt(prompt('Your Number?'));
-  // while (playerMoves.indexOf(playerNum) >= 0){
-  //   playerNum = parseInt(prompt('already picked, try again'));
-  // }
   if(turnCounter === 0){
     computerNum = Math.floor((Math.random()*4)+3);
   } else if (computerArrayTotal <= playerArrayTotal){
